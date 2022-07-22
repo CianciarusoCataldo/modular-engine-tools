@@ -9,7 +9,9 @@
 import {
   ModularEngineActionCreator,
   ModularEngineReducer,
-  ModularEngineEffects,
+  ModularEnginePlugin,
+  ModularEnginePluginParameters,
+  ModularEngineReducerEffects,
 } from "modular-engine-types";
 
 import { createSelector } from "reselect";
@@ -72,7 +74,7 @@ export const createModularAction = <
  */
 export const createModularReducer = <T = any>(reducerConfig?: {
   initialState?: T;
-  effects?: ModularEngineEffects<T>;
+  effects?: ModularEngineReducerEffects<T>;
   additionalReducer?: ModularEngineReducer<T>;
 }): ModularEngineReducer<T> => {
   const inputConfig = reducerConfig || {};
@@ -114,3 +116,23 @@ export const createModularReducer = <T = any>(reducerConfig?: {
  * @copyright Cataldo Cianciaruso 2022
  */
 export const createModularSelector = createSelector;
+
+export const createModularEnginePlugin = (
+  feature: string,
+  pluginCallback?: () => ModularEnginePluginParameters
+): ModularEnginePlugin => {
+  function pluginCreator() {
+    const pluginOutput = pluginCallback ? pluginCallback() : {};
+    return pluginOutput;
+  }
+
+  pluginCreator.toString = function () {
+    return "modular-engine plugin " + feature;
+  };
+  pluginCreator.feature = feature;
+  pluginCreator.match = function (pluginToCompare: ModularEnginePlugin) {
+    return pluginToCompare.feature === feature;
+  };
+
+  return pluginCreator;
+};

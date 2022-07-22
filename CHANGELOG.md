@@ -2,6 +2,7 @@
 
 ## Versions
 
+- [0.3.0](#030)
 - [0.2.0](#020)
 - [0.1.0](#010)
 
@@ -15,7 +16,8 @@
 
 ### 0.3.0
 
-- Modular-engine internal selectors and actions exported with the lib
+- `createModularEnginePlugin` helper function, to easily create a modular-engine plugin with the new format
+- types updated
 
 <br>
 
