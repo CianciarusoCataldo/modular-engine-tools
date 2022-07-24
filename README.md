@@ -19,7 +19,7 @@
 
 <br>
 
-Utils and functions to easily work with modular ecosystem
+A collection of useful helper functions to to easily work with [modular-engine system](https://github.com/CianciarusoCataldo/modular-engine)
 
 ---
 

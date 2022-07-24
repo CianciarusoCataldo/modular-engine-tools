@@ -1,5 +1,7 @@
 /**
- * @file `config` slice initial state file
+ * @file {@link https://github.com/CianciarusoCataldo/modular-engine modular-engine} `config` slice initial state file
+ *
+ * @see https://github.com/CianciarusoCataldo/modular-engine/docs
  *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
@@ -9,9 +11,9 @@
 import { ModularEngineConfigState } from "modular-engine-types";
 
 /**
- * `config` slice initial state (default configuration)
+ * {@link https://github.com/CianciarusoCataldo/modular-engine modular-engine} `config` slice initial state (default configuration)
  *
- * @see https://github.com/CianciarusoCataldo/modular-engine/#configuration
+ * @see https://github.com/CianciarusoCataldo/modular-engine/docs
  *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *

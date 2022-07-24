@@ -1,15 +1,15 @@
 import PKG from "../../package.json";
 
-import createModularActionTests from "../test-suites/createModularAction";
+import createModularEngineActionTests from "../test-suites/createModularEngineAction";
 import createModularEnginePluginTests from "../test-suites/createModularEnginePlugin";
-import createModularReducerTests from "../test-suites/createModularReducer";
-import createModularSelectorTests from "../test-suites/createModularSelector";
+import createModularEngineReducerTests from "../test-suites/createModularEngineReducer";
+import createModularEngineSelectorTests from "../test-suites/createModularEngineSelector";
 import engineInternalTests from "../test-suites/engine-internal";
 
 describe(`\n        ## ${PKG.name} v${PKG.version} - unit tests ##        \n`, () => {
-  createModularActionTests();
-  createModularReducerTests();
-  createModularSelectorTests();
+  createModularEngineActionTests();
+  createModularEngineReducerTests();
+  createModularEngineSelectorTests();
   createModularEnginePluginTests();
   engineInternalTests();
 });

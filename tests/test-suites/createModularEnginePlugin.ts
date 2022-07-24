@@ -1,7 +1,7 @@
 import { ModularEnginePluginInteraction } from "modular-engine-types";
-import { createModularEnginePlugin } from "../../src/utils";
+import { createModularEnginePlugin } from "../../src/helpers/utils";
 
-const runTests = () => {
+const createModularEnginePluginTests = () => {
   describe("\n   createModularEnginePlugin", () => {
     describe("\n     create a valid modular-engine plugin", () => {
       test("with callback", () => {
@@ -36,4 +36,4 @@ const runTests = () => {
   });
 };
 
-export default runTests;
+export default createModularEnginePluginTests;

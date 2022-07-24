@@ -1,5 +1,7 @@
 /**
- * @file modular-engine internal actions
+ * @file {@link https://github.com/CianciarusoCataldo/modular-engine modular-engine} internal actions
+ *
+ * @see https://cianciarusocataldo.github.io/modular-engine/docs
  *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
@@ -8,18 +10,23 @@
 
 import { ModularEngineConfig } from "modular-engine-types";
 
-import { createModularAction } from "../../utils";
+import { createModularEngineAction } from "../../helpers/utils";
 
 /**
- * Dispatched when modular-engine system init is completed. Intercept this action with an epic to do some actions at the end of the init
+ * Dispatched when {@link https://github.com/CianciarusoCataldo/modular-engine modular-engine system} init is completed.
+ * Intercept this action with an {@link https://redux-observable.js.org/docs/basics/Epics.html epic} or a generic {@link https://github.com/CianciarusoCataldo/modular-engine modular-engine} middleware,
+ * to execute some actions at the end of the init
  *
- * This actions is not meant to be dispatched outside the normal init process (so only once), as this would break the modular-engine standard flow
+ * NOTE: don't dispatch this action into your app, outside the normal init process, as this would break the {@link https://github.com/CianciarusoCataldo/modular-engine modular-engine} standard flow
+ * (keep in mind that some plugins could use this action to coordinate their actions, assuming always the standard init process)
+ *
+ * @see https://cianciarusocataldo.github.io/modular-engine/docs
  *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
  * @copyright Cataldo Cianciaruso 2022
  */
-export const engineInitCompleted = createModularAction(
+export const engineInitCompleted = createModularEngineAction(
   "@@modular-engine/INIT_COMPLETED",
   (config?: ModularEngineConfig) => ({ payload: { parsedConfig: config } })
 );

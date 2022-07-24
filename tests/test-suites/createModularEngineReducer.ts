@@ -1,9 +1,9 @@
-import { createModularReducer } from "../../src/utils";
+import { createModularEngineReducer } from "../../src/helpers/utils";
 
-const runTests = () => {
+const createModularEngineReducerTests = () => {
   describe("\n   createModularReducer", () => {
     test("with no params", () => {
-      const resultReducer = createModularReducer();
+      const resultReducer = createModularEngineReducer();
 
       /* eslint-disable */
       expect(resultReducer({}, null as any)).toStrictEqual({});
@@ -14,7 +14,9 @@ const runTests = () => {
     });
 
     test("with all params", () => {
-      const resultReducer = createModularReducer<{ testField: any } | null>({
+      const resultReducer = createModularEngineReducer<{
+        testField: any;
+      } | null>({
         initialState: { testField: { extraField: null } },
         effects: {
           "@@test/test-action": (state, action) => ({
@@ -41,4 +43,4 @@ const runTests = () => {
   });
 };
 
-export default runTests;
+export default createModularEngineReducerTests;

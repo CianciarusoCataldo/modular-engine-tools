@@ -1,5 +1,7 @@
 /**
- * @file modular-engine-tools functions
+ * @file {@link https://github.com/CianciarusoCataldo/modular-engine-tools modular-engine-tools} functions
+ *
+ * @see https://cianciarusocataldo.github.io/modular-engine/docs
  *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
@@ -17,18 +19,20 @@ import {
 import { createSelector } from "reselect";
 
 /**
- * Create a standard modular-engine action creator
+ * Create a standard {@link https://github.com/CianciarusoCataldo/modular-engine modular-engine} action creator
  *
  * @param type action type
  * @param prepareAction (optional) function to preare the action payload content, if not set an empty payload will be used instead
  *
- * @returns a modular-engine action creator with the given type set
+ * @returns a {@link https://github.com/CianciarusoCataldo/modular-engine modular-engine} action creator with the given type set
+ *
+ * @see https://cianciarusocataldo.github.io/modular-engine/docs
  *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
  * @copyright Cataldo Cianciaruso 2022
  */
-export const createModularAction = <
+export const createModularEngineAction = <
   T extends Record<string, any> = Record<string, any>
 >(
   type: string,
@@ -57,22 +61,23 @@ export const createModularAction = <
 };
 
 /**
- * Create a standard modular-engine reducer
+ * Create a standard {@link https://github.com/CianciarusoCataldo/modular-engine modular-engine} reducer
  *
  * @param reducerParams optional reducer parameters:
  * - `initialState` : reducer initial state
- * - `internalCases` : a key-value object with all reducer action cases. Every key is the action type related to a case, and the value is a function that
+ * - `effects` : a key-value object with all reducer action cases. Every key is the action type related to a case, and the value is a function that
  * receives the actual state and the action, and return the updated state
- * - `customConfig` : reducer custom config
  * - `additionalReducer` : additional reducer to merge to the returned one
  *
  * @returns a modular-engine reducer, ready to be used inside modular-engine system
+ *
+ * @see https://cianciarusocataldo.github.io/modular-engine/docs
  *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
  * @copyright Cataldo Cianciaruso 2022
  */
-export const createModularReducer = <T = any>(reducerConfig?: {
+export const createModularEngineReducer = <T = any>(reducerConfig?: {
   initialState?: T;
   effects?: ModularEngineReducerEffects<T>;
   additionalReducer?: ModularEngineReducer<T>;
@@ -87,6 +92,9 @@ export const createModularReducer = <T = any>(reducerConfig?: {
 
   /**
    * A standard modular-engine reducer function
+   *
+   * @see https://cianciarusocataldo.github.io/modular-engine/docs
+   *
    *
    * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
    *
@@ -108,15 +116,32 @@ export const createModularReducer = <T = any>(reducerConfig?: {
 };
 
 /**
- * create a standard modular-engin selector
+ * create a standard {@link https://github.com/CianciarusoCataldo/modular-engine modular-engine} selector
+ * (use {@link https://github.com/reduxjs/reselect reselect lib} under the hood)
  *
+ * @see https://cianciarusocataldo.github.io/modular-engine/docs
+ * @see https://github.com/reduxjs/reselect
  *
  * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
  *
  * @copyright Cataldo Cianciaruso 2022
  */
-export const createModularSelector = createSelector;
+export const createModularEngineSelector = createSelector;
 
+/**
+ * create a standard {@link https://github.com/CianciarusoCataldo/modular-engine modular-engine} plugin
+ *
+ * @param feature (required) plugin feature name, to let other plugins know when it is enabled
+ * @param pluginCallback (optional) a callback function that returns plugin parameters
+ *
+ * @returns a ready to use {@link https://github.com/CianciarusoCataldo/modular-engine modular-engine} plugin
+ *
+ * @see https://cianciarusocataldo.github.io/modular-engine/docs
+ *
+ * @author Cataldo Cianciaruso <https://github.com/CianciarusoCataldo>
+ *
+ * @copyright Cataldo Cianciaruso 2022
+ */
 export const createModularEnginePlugin = (
   feature: string,
   pluginCallback?: () => ModularEnginePluginParameters

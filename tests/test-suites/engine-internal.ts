@@ -5,7 +5,7 @@ import {
   getConfig,
 } from "../../src/engine-internal/config/selectors";
 
-const runTest = () => {
+const engineTests = () => {
   const mockState = {
     config: { appName: "test-app" },
   };
@@ -27,4 +27,4 @@ const runTest = () => {
   });
 };
 
-export default runTest;
+export default engineTests;
