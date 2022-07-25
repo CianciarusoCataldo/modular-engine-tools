@@ -15,6 +15,12 @@
 
 <br>
 
+### 0.5.0
+
+- Modular-engine-types updated to new version, to use new plugin format
+
+<br>
+
 ### 0.4.0
 
 - New naming convention, every helper function name now contains `engine` word to better differentiate them
